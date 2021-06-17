@@ -46,8 +46,8 @@ jobs:
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v2
-          with:
-            name: appzip-artifact
+        with:
+          name: appzip-artifact
       - name: Beanstalk Deploy
         # You may pin to the exact commit or the version.
         # uses: einaregilsson/beanstalk-deploy@75b541583c94bec6dde89fff8b8642ea9da27f6b
