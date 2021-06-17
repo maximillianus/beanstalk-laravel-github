@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  build-and-deplo:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -32,10 +32,22 @@ jobs:
       # Generate deployment package
       - name: Generate deployment package
         run: zip ./application.zip -r * .[^.]* -x "vendor/*"
+
+      # Upload package
+      - name: Upload zip artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: appzip-artifact
+          path: ./application.zip
+          retention-days: 1
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+          with:
+            name: appzip-artifact
       - name: Beanstalk Deploy
         # You may pin to the exact commit or the version.
         # uses: einaregilsson/beanstalk-deploy@75b541583c94bec6dde89fff8b8642ea9da27f6b
