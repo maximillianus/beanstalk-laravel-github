@@ -50,7 +50,7 @@ jobs:
           # AWS Session Token when using temporary security credentials such as when assuming a role in AWS through STS
 #           aws_session_token: # optional
           # AWS Region
-          region: ${{secrets.AWS_DEFAULT_REGION}
+          region: ${{secrets.AWS_DEFAULT_REGION}}
           # Beanstalk application name
           application_name: "demo-laravel"
           # Beanstalk environment name. If empty a version will be created but not deployed anywhere.
