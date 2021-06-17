@@ -33,6 +33,7 @@ jobs:
       - name: Generate deployment package
         run: zip ./application.zip -r * .[^.]* -x "vendor/*"
   deploy:
+    runs-on: ubuntu-latest
     steps:
       - name: Beanstalk Deploy
         # You may pin to the exact commit or the version.
