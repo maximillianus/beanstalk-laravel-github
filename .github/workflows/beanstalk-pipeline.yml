@@ -39,7 +39,7 @@ jobs:
       #   with:
       #     name: appzip-artifact
       #     path: ./application.zip
-          retention-days: 1
+      #     retention-days: 1
       # Upload cache
       - name: Upload zip artifact
         uses: actions/cache@v2
