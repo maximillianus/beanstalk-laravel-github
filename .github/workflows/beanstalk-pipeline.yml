@@ -50,13 +50,13 @@ jobs:
           # AWS Session Token when using temporary security credentials such as when assuming a role in AWS through STS
 #           aws_session_token: # optional
           # AWS Region
-          region: ${{secrets.AWS_DEFAULT_REGION}
+          region: ${{secrets.AWS_DEFAULT_REGION}}
           # Beanstalk application name
           application_name: "demo-laravel"
           # Beanstalk environment name. If empty a version will be created but not deployed anywhere.
           environment_name: "Demolaravel-env-1"
           # Version label for new Beanstalk version
-          version_label: "github-laravel-${{ steps.format-time.outputs.replaced }}"
+          version_label: "github-laravel-${{ github.run_number }}"
           # Version description for the new Beanstalk version
 #           version_description: # optional
           # Zip file with the version to deploy. If skipped the action will deploy existing version.
