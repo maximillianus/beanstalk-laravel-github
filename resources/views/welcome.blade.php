@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Beanstalk Laravel
+                    Beanstalk Laravel Github
                 </div>
 
                 <div class="links">
